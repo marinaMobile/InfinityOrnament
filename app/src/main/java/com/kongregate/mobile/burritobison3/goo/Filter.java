@@ -17,14 +17,11 @@ import org.jsoup.nodes.Document;
 
 public class Filter extends AppCompatActivity {
 
-    TextView carryRep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
-        carryRep = findViewById(R.id.tv_hello);
         new asyncFunc().execute();
-
     }
 
 
@@ -32,18 +29,10 @@ public class Filter extends AppCompatActivity {
 
 
         String result;
-
         String cAdder = Hawk.get(C_STR1);
-
         String dAdder = Hawk.get(DLNK1);
-
-
         String corelnk = "http://infinityornament.xyz/go.php?to=1&";
-
-
         String oneis = "sub_id_1=";
-
-
         String namelnk = corelnk + oneis + cAdder;
         String deeplnk = corelnk + oneis + dAdder;
 
@@ -69,12 +58,11 @@ public class Filter extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            carryRep.setText(result);
 
             Intent i1 = new Intent(getApplicationContext(), StartGame.class);
 
             Intent i2 = new Intent(getApplicationContext(), RealAct.class);
-            if (result.equals("1f4g")) {
+            if (result.equals("admin")) {
                 startActivity(i1);
             } else {
                 startActivity(i2);

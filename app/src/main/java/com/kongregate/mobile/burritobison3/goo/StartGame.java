@@ -25,13 +25,13 @@ public class StartGame extends AppCompatActivity {
                 v -> startActivity(new Intent(getApplicationContext(),
                         LightActivity.class)));
 
-        btnLight.setOnClickListener(
+        btnMed.setOnClickListener(
                 v -> startActivity(new Intent(getApplicationContext(),
-                        LightActivity.class)));
+                        MedActivity.class)));
 
-        btnLight.setOnClickListener(
+        btnHard.setOnClickListener(
                 v -> startActivity(new Intent(getApplicationContext(),
-                        LightActivity.class)));
+                        HardActivity.class)));
 
     }
 }

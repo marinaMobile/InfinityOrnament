@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HardActivity">
+    tools:context=".HardActivity"
+    android:background="@drawable/back3">
+
+    <TextView
+        android:id="@+id/timeHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="32sp"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeHard">
+
+        <ImageView
+            android:id="@+id/oneHard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/cat" />
+
+        <ImageView
+            android:id="@+id/twoHard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/juke" />
+
+        <ImageView
+            android:id="@+id/threeHard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/pharaoh" />
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

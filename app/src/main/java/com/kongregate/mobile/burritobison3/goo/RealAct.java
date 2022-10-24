@@ -253,7 +253,7 @@ public class RealAct extends AppCompatActivity {
         cstr1 = Hawk.get(C_STR1);
         dlnk1 = Hawk.get(DLNK1);
         main_id = Hawk.get(FUNC_ID);
-        paket = "com.crazylabs.hair.dye.challeng";
+        paket = "com.kongregate.mobile.burritobison3.goo";
         String afId = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
         AppsFlyerLib.getInstance().setCollectAndroidID(true);
 

@@ -11,6 +11,7 @@ import com.appsflyer.AppsFlyerLib;
 import com.facebook.applinks.AppLinkData;
 import com.orhanobut.hawk.Hawk;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -88,7 +89,7 @@ public class ReplaceAct extends AppCompatActivity {
 
                 Log.d("TESTING_ZONE", "af stat is " + conversionData.get("af_status"));
                 String status = (String) conversionData.get("af_status");
-                if (status.equals("Organic")) {
+                if (Objects.equals(status, "Organic")) {
                     stMain = "null";
                 } else {
                     stMain = (String) conversionData.get("campaign");

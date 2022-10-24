@@ -21,9 +21,7 @@ public class AppClass  extends Application {
 
         OneSignal.initWithContext(this);
         OneSignal.setAppId(ONESIGNAL_APP_ID);
-
         Hawk.init(this).build();
-
         gltask.execute();
 
     }
@@ -35,22 +33,13 @@ public class AppClass  extends Application {
             AdvertisingIdClient.Info idInfo = null;
             try {
                 idInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
-            } catch (GooglePlayServicesNotAvailableException e) {
-                e.printStackTrace();
-            } catch (GooglePlayServicesRepairableException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
             String advertId = null;
             try {
-
-
                 advertId = idInfo.getId();
-
                 Hawk.put(FUNC_ID, advertId);
-
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -60,8 +49,6 @@ public class AppClass  extends Application {
 
         @Override
         protected void onPostExecute(String advertId) {
-
-
         }
     };
 }

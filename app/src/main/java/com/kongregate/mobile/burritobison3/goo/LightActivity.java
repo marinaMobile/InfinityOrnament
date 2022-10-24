@@ -22,7 +22,7 @@ public class LightActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timer);
+        setContentView(R.layout.activity_light);
         time = (TextView) findViewById(R.id.time);
         ImageView dragon = findViewById(R.id.my_button);
         LinearLayout ll_wasp = findViewById(R.id.ll_game);
@@ -35,7 +35,6 @@ public class LightActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ++counter;
-                i.putExtra("Score", counter);
             }
         });
         countDownTimer = new CountDownTimer(16 * 1000, 1000) {
@@ -65,5 +64,12 @@ public class LightActivity extends AppCompatActivity {
                         .start());
             }
         },0,300);
+
+
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 }
