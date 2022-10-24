@@ -63,6 +63,7 @@ public class RealAct extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         webSettings.setUseWideViewPort(true);
+        webSettings.setUserAgentString(webSettings.getUserAgentString().replace("; wv", ""));
 
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setAllowFileAccess(true);

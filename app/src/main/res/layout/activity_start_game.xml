@@ -4,6 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartGame">
+    tools:context=".StartGame"
+    android:background="@drawable/back">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Catch the treasures as many times as you can"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@id/light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose difficulty level"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <Button
+        android:id="@+id/light"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/black"
+        android:text="Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/light" />
+
+    <Button
+        android:id="@+id/hardcore"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/black"
+        android:text="Hardcore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

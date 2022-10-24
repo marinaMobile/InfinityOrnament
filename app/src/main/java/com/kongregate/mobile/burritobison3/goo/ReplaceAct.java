@@ -18,9 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class ReplaceAct extends AppCompatActivity {
 
     public static final String C_STR1 = "cstR1";
-
     public static final String DLNK1 = "dfB1";
-
     private static final String AF_DEV_KEY = "Ta3ZKG3Vy456FUB8iP2p2E";
 
     String stMain;
@@ -61,18 +59,14 @@ public class ReplaceAct extends AppCompatActivity {
 
         AppLinkData.fetchDeferredAppLinkData(this,
                 appLinkData -> {
-
                     if (appLinkData != null) {
                         String params;
                         params = appLinkData.getTargetUri().getHost();
                         Hawk.put(DLNK1, params);
                         Log.d("FB", params);
-
-
                     } else {
                         Log.d("FB", "Error Code:");
                     }
-
                 }
         );
     }
@@ -82,9 +76,7 @@ public class ReplaceAct extends AppCompatActivity {
         Intent intent = new Intent(ReplaceAct.this, Filter.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
         finish();
-
     }
 
     public void appsflyer() {
@@ -95,38 +87,27 @@ public class ReplaceAct extends AppCompatActivity {
 
 
                 Log.d("TESTING_ZONE", "af stat is " + conversionData.get("af_status"));
-
-                stMain = (String) conversionData.get("af_status");
-
-
-                Log.d("NAMING TEST", "campaign attributed: " + stMain);
-
-
+                String status = (String) conversionData.get("af_status");
+                if (status.equals("Organic")) {
+                    stMain = "null";
+                } else {
+                    stMain = (String) conversionData.get("campaign");
+                }
                 Hawk.put(C_STR1, stMain);
-
-
+                Log.d("NAMING TEST", "campaign attributed: " + stMain);
             }
 
 
             @Override
             public void onConversionDataFail(String errorMessage) {
-                Log.d("LOG_TAG", "error getting conversion data: " + errorMessage);
-
-
             }
 
             @Override
             public void onAppOpenAttribution(Map<String, String> attributionData) {
-
-                for (String attrName : attributionData.keySet()) {
-                    Log.d("LOG_TAG", "attribute: " + attrName + " = " + attributionData.get(attrName));
-                }
-
             }
 
             @Override
             public void onAttributionFailure(String errorMessage) {
-                Log.d("LOG_TAG", "error onAttributionFailure : " + errorMessage);
             }
 
         };

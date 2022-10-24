@@ -1,0 +1,22 @@
+package com.kongregate.mobile.burritobison3.goo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class Winner extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_winner);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        TextView scoreText = findViewById(R.id.scoreText);
+        Intent intent = getIntent();
+        scoreText.setText(intent.getStringExtra("Score"));
+
+    }
+}
