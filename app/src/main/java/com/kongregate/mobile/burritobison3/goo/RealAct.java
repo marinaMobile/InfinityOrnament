@@ -1,8 +1,8 @@
 package com.kongregate.mobile.burritobison3.goo;
 
 import static com.kongregate.mobile.burritobison3.goo.AppClass.FUNC_ID;
+import static com.kongregate.mobile.burritobison3.goo.MainActivity.DLNK1;
 import static com.kongregate.mobile.burritobison3.goo.ReplaceAct.C_STR1;
-import static com.kongregate.mobile.burritobison3.goo.ReplaceAct.DLNK1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -30,8 +30,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
-
-import com.airbnb.lottie.LottieAnimationView;
 import com.appsflyer.AppsFlyerLib;
 import com.orhanobut.hawk.Hawk;
 
