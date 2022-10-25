@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class ReplaceAct extends AppCompatActivity {
 
     public static final String C_STR1 = "cstR1";
-    public static final String DLNK1 = "dfB1";
     private static final String AF_DEV_KEY = "Ta3ZKG3Vy456FUB8iP2p2E";
 
     String stMain;
@@ -41,7 +40,7 @@ public class ReplaceAct extends AppCompatActivity {
             }
         }, 0, 2, TimeUnit.SECONDS);
 
-        metaLnk();
+
         appsflyer();
 
         SharedPreferences prefs = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
@@ -56,21 +55,7 @@ public class ReplaceAct extends AppCompatActivity {
         }
     }
 
-    public void metaLnk() {
 
-        AppLinkData.fetchDeferredAppLinkData(this,
-                appLinkData -> {
-                    if (appLinkData != null) {
-                        String params;
-                        params = appLinkData.getTargetUri().getHost();
-                        Hawk.put(DLNK1, params);
-                        Log.d("FB", params);
-                    } else {
-                        Log.d("FB", "Error Code:");
-                    }
-                }
-        );
-    }
 
     public void teleport() {
 

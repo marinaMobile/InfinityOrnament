@@ -1,6 +1,6 @@
 package com.kongregate.mobile.burritobison3.goo;
 
-import static bolts.Task.delay;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,11 +22,14 @@ import org.jsoup.nodes.Document;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String DLNK1 = "dfB1";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new asyncFunc().execute();
+        metaLnk();
     }
 
     public class asyncFunc extends AsyncTask<Void, Void, Void> {
@@ -64,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
+
+    }
+    public void metaLnk() {
+
+        AppLinkData.fetchDeferredAppLinkData(this,
+                appLinkData -> {
+                    if (appLinkData != null) {
+                        String params;
+                        params = appLinkData.getTargetUri().getHost();
+                        Hawk.put(DLNK1, params);
+                        Log.d("FB", params);
+                    } else {
+                        Log.d("FB", "Error Code:");
+                    }
+                }
+        );
     }
 
 }

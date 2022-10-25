@@ -1,7 +1,7 @@
 package com.kongregate.mobile.burritobison3.goo;
 
+import static com.kongregate.mobile.burritobison3.goo.MainActivity.DLNK1;
 import static com.kongregate.mobile.burritobison3.goo.ReplaceAct.C_STR1;
-import static com.kongregate.mobile.burritobison3.goo.ReplaceAct.DLNK1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
