@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
@@ -47,7 +48,7 @@ public class RealAct extends AppCompatActivity {
     private ValueCallback<Uri[]> mFilePathCallback;
     private String mCameraPhotoPath;
     WebView viewMainMain;
-//    LottieAnimationView animationView;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -56,7 +57,6 @@ public class RealAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real);
         viewMainMain = findViewById(R.id.realView);
-//        animationView = findViewById(R.id.anim3);
 
         WebSettings webSettings = viewMainMain.getSettings();
 
@@ -245,7 +245,7 @@ public class RealAct extends AppCompatActivity {
 
         String  cstr1, main_id, dlnk1, paket;
 
-        String one, two, three, four;
+        String one, two, three, four, five, six;
 
         SharedPreferences sp_p = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE);
 
@@ -256,12 +256,15 @@ public class RealAct extends AppCompatActivity {
         paket = "com.kongregate.mobile.burritobison3.goo";
         String afId = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
         AppsFlyerLib.getInstance().setCollectAndroidID(true);
+        String androidVersion = Build.VERSION.RELEASE;
 
 
         one = "sub_id_1=";
-        two = "sub_id_2=";
-        three = "sub_id_3=";
+        two = "deviceID=";
+        three = "ad_id=";
         four = "sub_id_4=";
+        five = "sub_id_5=";
+        six = "sub_id_6=";
 
 
         String first1 = "http://";
@@ -271,11 +274,11 @@ public class RealAct extends AppCompatActivity {
         String fff;
 
         if (!cstr1.equals("null")){
-            fff = whole  + one + cstr1 + "&" + two + afId + "&" + three + main_id + "&" + four + paket;
+            fff = whole+one+cstr1+"&"+two+afId+"&"+three+main_id+"&"+four+paket+"&"+five+androidVersion+"&"+six+"naming";
         }
 
         else{
-            fff = whole  + one + dlnk1 + "&" + two + afId + "&" + three + main_id + "&" + four + paket;
+            fff = whole+one+dlnk1+"&"+two+afId+"&"+three+main_id+"&"+four+paket+"&"+five+androidVersion+"&"+six+"deeporg";
         }
 
 
